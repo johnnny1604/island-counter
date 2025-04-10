@@ -1,7 +1,5 @@
 # Island Counter
 
----
-
 ## Description
 
 A small library for counting the number of contiguous elements in a 2D matrix.

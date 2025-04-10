@@ -1,0 +1,25 @@
+# Using .editorconfig ensures unified rules agnostic of IDE
+
+# https://spec.editorconfig.org/
+# https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+
+root = true
+
+[*]
+
+charset = utf-8
+
+# set to tab or space to use hard tabs or soft tabs respectively
+indent_style = space
+indent_size = 2
+
+# unix style new lines
+end_of_line = lf
+
+insert_final_newline = true
+
+trim_trailing_whitespace = true
+
+[*.ts]
+
+max_line_length = 120
