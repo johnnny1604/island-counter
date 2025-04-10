@@ -1,0 +1,19 @@
+{
+  "name": "island-counter",
+  "version": "0.0.1",
+  "description": "A small library for counting the number of contiguous elements in a 2D matrix.",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnny1604/island-counter.git"
+  },
+  "author": "Ivan Rachev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnnny1604/island-counter/issues"
+  },
+  "homepage": "https://github.com/johnnny1604/island-counter#readme"
+}
