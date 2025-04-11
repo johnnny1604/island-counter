@@ -6,7 +6,7 @@
   "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "npm run build:test && node --test ./test",
+    "test": "npm run build:test && node --test",
     "build": "tsup",
     "build:test": "tsc ./src/**/*.test.ts --outDir test --target es2022 --module commonjs --esModuleInterop"
   },
