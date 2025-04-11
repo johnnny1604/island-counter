@@ -30,6 +30,10 @@ export function countIslands(matrix: number[][]): number {
 
   for (let row = 0; row < matrix.length; row++) {
     for (let col = 0; col < matrix[row].length; col++) {
+      if (matrix[row][col] !== 1 && matrix[row][col] !== 0) {
+        throw new Error("Malformed matrix. Matrix should be only of 1s and 0s");
+      }
+
       if (matrix[row][col] === 1 && !visited[row][col]) {
         islands++;
         markIslandDFS(matrix, visited, row, col)

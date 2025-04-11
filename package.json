@@ -6,7 +6,9 @@
   "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "test": "npm run build:test && node --test ./test",
+    "build": "tsup",
+    "build:test": "tsc ./src/**/*.test.ts --outDir test --target es2022 --module commonjs --esModuleInterop"
   },
   "repository": {
     "type": "git",
