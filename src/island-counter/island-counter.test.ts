@@ -1,6 +1,6 @@
+import assert from "node:assert";
 import { describe, it } from "node:test";
 import { countIslands } from "./island-counter";
-import assert from "node:assert";
 
 describe(countIslands.name, () => {
   it("should return 0 islands if matrix is empty", () => {

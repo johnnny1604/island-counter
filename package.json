@@ -6,9 +6,13 @@
   "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "npm run build:test && node --test",
     "build": "tsup",
-    "build:test": "tsc ./src/**/*.test.ts --outDir test --target es2022 --module commonjs --esModuleInterop"
+    "test": "npm run build:test && node --test",
+    "bench": "npm run build:bench && node ./bench-out/bench/bench.js && rm -rf ./bench-out",
+    "build:test": "tsc -p ./tsconfig.tests.json",
+    "build:test-legacy": "tsc ./src/**/*.test.ts --outDir tests --target es2022 --module commonjs --esModuleInterop",
+    "build:bench": "tsc -p ./tsconfig.bench.json",
+    "build:bench-legacy": "tsc ./bench/bench.ts --outDir bench-out --target es2022 --module nodenext --esModuleInterop --moduleResolution nodenext"
   },
   "repository": {
     "type": "git",
