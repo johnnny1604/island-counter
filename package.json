@@ -10,7 +10,10 @@
     "test": "npm run build:test && node --test",
     "bench": "npm run build:bench && node ./bench-out/bench/bench.js",
     "build:test": "tsc -p ./tsconfig.tests.json",
-    "build:bench": "tsc -p ./tsconfig.bench.json"
+    "build:bench": "tsc -p ./tsconfig.bench.json",
+    "cleanup": "node ./scripts/remove.js tests bench-out",
+    "cleanup:test": "node ./scripts/remove.js tests",
+    "cleanup:bench": "node ./scripts/remove.js bench-out"
   },
   "repository": {
     "type": "git",
