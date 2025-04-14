@@ -8,11 +8,12 @@
   "scripts": {
     "build": "tsup",
     "test": "npm run build:test && node --test",
-    "bench": "npm run build:bench && node ./bench-out/bench/bench.js && rm -rf ./bench-out",
+    "bench": "npm run build:bench && node ./bench-out/bench/bench.js",
     "build:test": "tsc -p ./tsconfig.tests.json",
-    "build:test-legacy": "tsc ./src/**/*.test.ts --outDir tests --target es2022 --module commonjs --esModuleInterop",
     "build:bench": "tsc -p ./tsconfig.bench.json",
-    "build:bench-legacy": "tsc ./bench/bench.ts --outDir bench-out --target es2022 --module nodenext --esModuleInterop --moduleResolution nodenext"
+    "cleanup": "node ./scripts/remove.js tests bench-out",
+    "cleanup:test": "node ./scripts/remove.js tests",
+    "cleanup:bench": "node ./scripts/remove.js bench-out"
   },
   "repository": {
     "type": "git",
