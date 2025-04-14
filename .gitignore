@@ -1,6 +1,7 @@
 node_modules/
 lib/
 tests/
+bench-out/
 
 # for mac users
 .DS_Store
