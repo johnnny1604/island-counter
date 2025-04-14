@@ -1,9 +1,9 @@
 name: CI
 on:
-  pull_request:
-    types: [opened, edited]
+  pull_request_target:
+    types: [opened, edited, reopened, synchronize]
     branches:
-      - "**"
+      - "master"
 
 jobs:
   build-ubuntu:
