@@ -55,10 +55,10 @@ function find(parent: number[], x: number): number {
 }
 
 function union(parent: number[], x: number, y: number): void {
-  const xr = find(parent, x);
-  const yr = find(parent, y);
-  if (xr !== yr) {
-    parent[yr] = xr;
+  const xRoot = find(parent, x);
+  const yRoot = find(parent, y);
+  if (xRoot !== yRoot) {
+    parent[yRoot] = xRoot;
   }
 }
 

@@ -3,5 +3,7 @@ lib/
 tests/
 bench-out/
 
+benchmark.json
+
 # for mac users
 .DS_Store
