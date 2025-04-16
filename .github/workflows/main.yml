@@ -20,7 +20,6 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm test
-      - run: npm run cleanup:test -- -y
 
   build-macos:
     runs-on: macos-latest
@@ -39,7 +38,6 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm test
-      - run: npm run cleanup:test -- -y
 
   build-windows:
     runs-on: windows-latest
@@ -58,4 +56,3 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm test
-      - run: npm run cleanup:test -- -y
