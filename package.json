@@ -10,7 +10,8 @@
     "test": "vitest run",
     "bench": "npm run build:bench && node ./bench-out/bench/bench.js",
     "build:bench": "tsc -p ./tsconfig.bench.json",
-    "cleanup:bench": "node ./scripts/remove.js bench-out"
+    "cleanup:bench": "node ./scripts/remove.js bench-out",
+    "test:browser": "vitest run --workspace=vitest.workspace.ts"
   },
   "repository": {
     "type": "git",

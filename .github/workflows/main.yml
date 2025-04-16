@@ -18,8 +18,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm install
+      - run: npx playwright install --with-deps
       - run: npm run build
-      - run: npm test
+      - run: npm run test:browser
 
   build-macos:
     runs-on: macos-latest
@@ -36,6 +37,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm install
+      - run: npx playwright install --with-deps
       - run: npm run build
       - run: npm test
 
@@ -54,5 +56,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm install
+      - run: npx playwright install --with-deps
       - run: npm run build
       - run: npm test
+
