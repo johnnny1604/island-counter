@@ -13,7 +13,8 @@ type BenchmarkData = {
 };
 
 type Algorithm = "dfs" | "unionFind";
-type BenchmarkOutput = Record<Algorithm, Record<string, BenchmarkData>>;
+type Size = typeof matrixSizes[number];
+type BenchmarkOutput = Record<Algorithm, Record<Size, BenchmarkData>>;
 
 function createMatrix(size: number): number[][] {
   return Array.from({ length: size }, () => Array.from({ length: size }, () => Math.round(Math.random())));
@@ -22,7 +23,7 @@ function createMatrix(size: number): number[][] {
 const benchOut: BenchmarkOutput = {
   dfs: {},
   unionFind: {},
-};
+} as BenchmarkOutput;
 
 function runBench(): void {
   for (let i = 0; i < matrixSizes.length; i++) {

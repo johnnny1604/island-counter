@@ -1,11 +1,10 @@
-import assert from "node:assert";
-import { describe, it } from "node:test";
+import { describe, expect, it } from "vitest";
 import { countIslandsDFS, countIslandsUnionFind } from "./island-counter";
 
 describe(countIslandsDFS.name, () => {
   it("should return 0 islands if matrix is empty", () => {
     const islands = countIslandsDFS([[]]);
-    assert.equal(islands, 0);
+    expect(islands).toBe(0);
   });
 
   it("should throw if matrix contains non 1 or 0 char", () => {
@@ -19,7 +18,7 @@ describe(countIslandsDFS.name, () => {
       [1, 1, 1, 1, 1, 1],
     ] as number[][];
 
-    assert.throws(() => countIslandsDFS(matrix));
+    expect(() => countIslandsDFS(matrix)).toThrowError("Malformed matrix. Matrix should be only of 1s and 0s");
   });
 
   it("should evaluate diagonally adjacent 1s as separate islands", () => {
@@ -30,7 +29,7 @@ describe(countIslandsDFS.name, () => {
     ];
     const islands = countIslandsDFS(matrix);
 
-    assert.equal(islands, 4);
+    expect(islands).toBe(4);
   });
 
   it("should count all adjacet 1s on the side as an island", () => {
@@ -45,7 +44,7 @@ describe(countIslandsDFS.name, () => {
     ];
     const islands = countIslandsDFS(matrix);
 
-    assert.equal(islands, 3);
+    expect(islands).toBe(3);
   });
 
   it("should count all adjacet 1s on top and bottom as an island", () => {
@@ -60,7 +59,7 @@ describe(countIslandsDFS.name, () => {
     ];
     const islands = countIslandsDFS(matrix);
 
-    assert.equal(islands, 2);
+    expect(islands).toBe(2);
   });
 
   it("should count all adjacet 1s as an island", () => {
@@ -75,7 +74,7 @@ describe(countIslandsDFS.name, () => {
     ];
     const islands = countIslandsDFS(matrix);
 
-    assert.equal(islands, 1);
+    expect(islands).toBe(1);
   });
 
   it("should correctly avaluate random distribution", () => {
@@ -90,14 +89,14 @@ describe(countIslandsDFS.name, () => {
     ];
     const islands = countIslandsDFS(matrix);
 
-    assert.equal(islands, 5);
+    expect(islands).toBe(5);
   });
 });
 
 describe(countIslandsUnionFind.name, () => {
   it("should return 0 islands if matrix is empty", () => {
     const islands = countIslandsUnionFind([[]]);
-    assert.equal(islands, 0);
+    expect(islands).toBe(0);
   });
 
   it("should throw if matrix contains non 1 or 0 char", () => {
@@ -111,7 +110,7 @@ describe(countIslandsUnionFind.name, () => {
       [1, 1, 1, 1, 1, 1],
     ] as number[][];
 
-    assert.throws(() => countIslandsUnionFind(matrix));
+    expect(() => countIslandsUnionFind(matrix)).toThrowError("Malformed matrix. Matrix should be only of 1s and 0s")
   });
 
   it("should evaluate diagonally adjacent 1s as separate islands", () => {
@@ -122,7 +121,7 @@ describe(countIslandsUnionFind.name, () => {
     ];
     const islands = countIslandsUnionFind(matrix);
 
-    assert.equal(islands, 4);
+    expect(islands).toBe(4);
   });
 
   it("should count all adjacet 1s on the side as an island", () => {
@@ -137,7 +136,7 @@ describe(countIslandsUnionFind.name, () => {
     ];
     const islands = countIslandsUnionFind(matrix);
 
-    assert.equal(islands, 3);
+    expect(islands).toBe(3);
   });
 
   it("should count all adjacet 1s on top and bottom as an island", () => {
@@ -152,7 +151,7 @@ describe(countIslandsUnionFind.name, () => {
     ];
     const islands = countIslandsUnionFind(matrix);
 
-    assert.equal(islands, 2);
+    expect(islands).toBe(2);
   });
 
   it("should count all adjacet 1s as an island", () => {
@@ -167,7 +166,7 @@ describe(countIslandsUnionFind.name, () => {
     ];
     const islands = countIslandsUnionFind(matrix);
 
-    assert.equal(islands, 1);
+    expect(islands).toBe(1);
   });
 
   it("should correctly avaluate random distribution", () => {
@@ -182,6 +181,6 @@ describe(countIslandsUnionFind.name, () => {
     ];
     const islands = countIslandsUnionFind(matrix);
 
-    assert.equal(islands, 5);
+    expect(islands).toBe(5);
   });
 })
