@@ -1,4 +1,4 @@
-export function markIslandDFS(matrix: number[][], visited: boolean[], row: number, col: number) {
+function markIslandDFS(matrix: number[][], visited: boolean[], row: number, col: number) {
   if (
     row < 0 ||
     row >= matrix.length ||
