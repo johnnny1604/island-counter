@@ -1,0 +1,9 @@
+node_modules/
+src/
+tests/
+bench-out/
+
+benchmark.json
+
+# for mac users
+.DS_Store
